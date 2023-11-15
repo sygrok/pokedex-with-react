@@ -1,0 +1,23 @@
+header {
+  text-align: center;
+  background-image: url("../assets/background-header.png");
+  background-repeat: no-repeat;
+  background-position: center;
+
+  height: auto;
+  padding: 45px;
+}
+
+.down-arrow {
+  width: 20px;
+}
+
+.pokeball {
+  width: 40px;
+  padding: auto;
+}
+
+h1,
+h3 {
+  margin: 10px;
+}
