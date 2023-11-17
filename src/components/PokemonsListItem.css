@@ -1,0 +1,19 @@
+section {
+  display: grid;
+  margin: 0 80px 0 80px;
+  grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
+  gap: 20px;
+  align-items: center;
+  background-color: #323232;
+}
+
+.card {
+  margin-bottom: 30px;
+  border-radius: 50px 0 50px 0;
+  width: 200px !important;
+  text-align: center;
+}
+
+img {
+  width: 150px;
+}

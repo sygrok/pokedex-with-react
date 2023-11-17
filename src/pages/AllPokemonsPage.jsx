@@ -1,7 +1,9 @@
+import PokemonList from "../components/PokemonsList";
+
 export default function AllPokemonsPage() {
   return (
     <>
-      <h1>AllPokemonsPAge</h1>
+      <PokemonList />
     </>
   );
 }
