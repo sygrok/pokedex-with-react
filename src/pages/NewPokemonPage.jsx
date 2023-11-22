@@ -16,7 +16,7 @@ export default function NewPokemonPage() {
         headers: { "Content-Type": "application/json" },
       }
     );
-    const responseData = await response.json();
+    await response.json();
   }
 
   const submitHandler = (event) => {

@@ -1,6 +1,13 @@
+import { useNavigate } from "react-router-dom";
 import "./PokemonsListItem.css";
 
 export default function PokemonListItem({ event }) {
+  const navigate = useNavigate();
+
+  const detailsHandler = (id) => {
+    navigate(`/${id}`);
+  };
+
   return (
     <>
       <section>
@@ -9,6 +16,13 @@ export default function PokemonListItem({ event }) {
             <h4>{x.name}</h4>
             <img src={x.img} />
             <h4>{x.category}</h4>
+            <button
+              onClick={() => {
+                detailsHandler(x.id);
+              }}
+            >
+              details
+            </button>
           </div>
         ))}
       </section>

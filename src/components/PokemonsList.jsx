@@ -34,13 +34,3 @@ export default function PokemonList() {
     </>
   );
 }
-
-{
-  /* <ul>
-        {pokemons.map((event) => (
-          <li style={{ listStyle: "none" }} key={event.id}>
-            <PokemonListItem event={event} />
-          </li>
-        ))}
-      </ul> */
-}
