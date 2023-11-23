@@ -4,7 +4,6 @@ section {
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
   gap: 20px;
   align-items: center;
-  background-color: #323232;
 }
 
 .card {

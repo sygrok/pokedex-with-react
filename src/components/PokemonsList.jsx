@@ -1,10 +1,13 @@
+import { Link, useNavigate } from "react-router-dom";
 import PokemonListItem from "./PokemonsListItem";
 import { useCallback, useEffect, useState } from "react";
+import "./PokemonList.css";
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const navigate = useNavigate();
 
   //fetch data
   const fetchData = useCallback(async () => {
@@ -53,12 +56,51 @@ export default function PokemonList() {
     return filteredPokemonList;
   };
 
+  const newHandler = () => {
+    navigate("/new");
+  };
+
   return (
     <>
-      <section>
-        <button onClick={() => filteredByCategory(null)}>All</button>
-        <button onClick={() => filteredByCategory("fire")}>Fire</button>
-        <button onClick={() => filteredByCategory("electric")}>Electric</button>
+      <section className="categories">
+        <ul>
+          <li className="a" onClick={() => filteredByCategory(null)}>
+            All
+          </li>
+          <li className="b" onClick={newHandler}>
+            +New
+          </li>
+          <li className="c" onClick={() => filteredByCategory("fire")}>
+            Fire
+          </li>
+          <li className="d" onClick={() => filteredByCategory("electric")}>
+            Electric
+          </li>
+          <li className="e" onClick={() => filteredByCategory("water")}>
+            Water
+          </li>
+          <li className="f" onClick={() => filteredByCategory("grass")}>
+            Grass
+          </li>
+          <li className="g" onClick={() => filteredByCategory("flying")}>
+            Flying
+          </li>
+          <li className="k" onClick={() => filteredByCategory("fairy")}>
+            Fairy
+          </li>
+          <li className="l" onClick={() => filteredByCategory("poison")}>
+            Poison
+          </li>
+          <li className="m" onClick={() => filteredByCategory("fighting")}>
+            Fighting
+          </li>
+          <li className="n" onClick={() => filteredByCategory("psychic")}>
+            Psychic
+          </li>
+          <li className="p" onClick={() => filteredByCategory("rock")}>
+            Rock
+          </li>
+        </ul>
       </section>
       <div>
         <input

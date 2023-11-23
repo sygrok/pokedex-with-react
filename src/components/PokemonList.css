@@ -1,0 +1,104 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:ital,wght@0,500;1,900&display=swap");
+
+.categories {
+  position: fixed;
+  left: 0px;
+  padding: 0;
+  margin: 0;
+  text-align: center;
+  border-radius: 0px;
+  font-family: "Pixelify Sans", sans-serif;
+  font-size: large;
+  width: 80px;
+}
+
+.categories ul {
+  padding: 0px;
+  border-top-right-radius: 55px; /* Sağ üst kenar keskinleştirme */
+  border-bottom-right-radius: 55px; /* Sağ alt kenar keskinleştirme */
+  overflow: hidden; /* Ensure the border-radius is applied */
+}
+
+.categories li {
+  padding-bottom: 5px;
+  list-style: none;
+  text-align: center;
+  width: 83px;
+  cursor: pointer;
+  font-size: larger;
+  transition: all 0.3s ease-in-out;
+}
+
+li:hover {
+  width: 98px;
+  border-top-right-radius: 90px;
+  border-bottom-right-radius: 90px;
+}
+
+.a {
+  background-color: white;
+  color: #000;
+  border-top-right-radius: 90px;
+}
+
+.b {
+  background-color: blueviolet;
+  color: white;
+}
+
+.c {
+  background-color: firebrick;
+  color: white;
+}
+.d {
+  background-color: yellow;
+  color: black;
+}
+
+.e {
+  background-color: rgb(0, 204, 255);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.f {
+  background-color: rgb(43, 255, 0);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.g {
+  background-color: rgb(97, 73, 8);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.k {
+  background-color: rgb(255, 90, 173);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+.l {
+  background-color: rgb(201, 6, 240);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.m {
+  background-color: rgb(255, 114, 6);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.n {
+  background-color: rgb(255, 6, 184);
+  color: white;
+  text-shadow: 2px 1px #000;
+}
+
+.p {
+  background-color: rgb(71, 70, 71);
+  color: white;
+  text-shadow: 2px 1px #000;
+  border-bottom-right-radius: 90px;
+}
