@@ -4,6 +4,7 @@ import { useCallback, useEffect, useState } from "react";
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
+  const [searchTerm, setSearchTerm] = useState("");
 
   //fetch data
   const fetchData = useCallback(async () => {
@@ -30,16 +31,26 @@ export default function PokemonList() {
     fetchData();
   }, [fetchData]);
 
-  //Filter by category
+  //Filter by category or search term
   const filteredByCategory = (x) => {
     setSelectedCategory(x);
   };
+
   const getFilteredPokemons = () => {
-    if (selectedCategory === null) {
-      return pokemons;
-    } else {
-      return pokemons.filter((x) => x.category === selectedCategory);
+    let filteredPokemonList = [...pokemons];
+
+    if (selectedCategory !== null) {
+      filteredPokemonList = filteredPokemonList.filter(
+        (x) => x.category === selectedCategory
+      );
     }
+    if (searchTerm !== "") {
+      filteredPokemonList = filteredPokemonList.filter((x) =>
+        x.name.toLowerCase().includes(searchTerm.toLowerCase())
+      );
+    }
+
+    return filteredPokemonList;
   };
 
   return (
@@ -49,6 +60,14 @@ export default function PokemonList() {
         <button onClick={() => filteredByCategory("fire")}>Fire</button>
         <button onClick={() => filteredByCategory("electric")}>Electric</button>
       </section>
+      <div>
+        <input
+          type="text"
+          placeholder="Search Pokemon"
+          value={searchTerm}
+          onChange={(x) => setSearchTerm(x.target.value)}
+        />
+      </div>
       <PokemonListItem event={getFilteredPokemons()} />
     </>
   );
