@@ -1,5 +1,7 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:ital,wght@0,500;1,900&display=swap");
+
 :root {
-  font-family: Inter, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  font-family: "Pixelify Sans", sans-serif;
 
   color-scheme: light dark;
   color: rgba(255, 255, 255, 0.87);

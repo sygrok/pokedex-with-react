@@ -8,6 +8,10 @@ export default function PokemonListItem({ event }) {
     navigate(`/${id}`);
   };
 
+  function capitalize(x) {
+    return x.charAt(0).toUpperCase() + x.slice(1);
+  }
+
   return (
     <>
       <section>
@@ -15,7 +19,7 @@ export default function PokemonListItem({ event }) {
           <div className="card" key={x.id}>
             <h4>{x.name}</h4>
             <img src={x.img} />
-            <h4>{x.category}</h4>
+            <h4>{capitalize(x.category)}</h4>
             <button
               onClick={() => {
                 navigateDetails(x.id);
