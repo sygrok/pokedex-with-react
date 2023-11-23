@@ -6,6 +6,10 @@ export default function PokemonPage() {
   const [selectedPokemon, setSelectedPokemon] = useState();
   const navigate = useNavigate();
 
+  const navigateEdit = () => {
+    navigate(`/${id}/edit`);
+  };
+
   //fetch data
   useEffect(() => {
     const fetchPokemonDetails = async () => {
@@ -50,6 +54,7 @@ export default function PokemonPage() {
       <h6>{selectedPokemon.desc}</h6>
 
       <button onClick={handleDelete}>delete</button>
+      <button onClick={navigateEdit}>edit</button>
     </>
   );
 }

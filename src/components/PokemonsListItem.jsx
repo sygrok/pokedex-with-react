@@ -4,7 +4,7 @@ import "./PokemonsListItem.css";
 export default function PokemonListItem({ event }) {
   const navigate = useNavigate();
 
-  const detailsHandler = (id) => {
+  const navigateDetails = (id) => {
     navigate(`/${id}`);
   };
 
@@ -18,7 +18,7 @@ export default function PokemonListItem({ event }) {
             <h4>{x.category}</h4>
             <button
               onClick={() => {
-                detailsHandler(x.id);
+                navigateDetails(x.id);
               }}
             >
               details
