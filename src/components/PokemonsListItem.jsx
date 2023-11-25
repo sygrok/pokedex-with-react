@@ -19,14 +19,21 @@ export default function PokemonListItem({ event }) {
           <div className="card" key={x.id}>
             <h4>{x.name}</h4>
             <img src={x.img} />
-            <h4>{capitalize(x.category)}</h4>
-            <button
-              onClick={() => {
-                navigateDetails(x.id);
-              }}
-            >
-              details
-            </button>
+
+            <div className="card-desc">
+              <p>{x.desc.substring(0, 30)}...</p>
+
+              <div className="card-bottom">
+                <p>{capitalize(x.category)}</p>
+                <button
+                  onClick={() => {
+                    navigateDetails(x.id);
+                  }}
+                >
+                  Details
+                </button>
+              </div>
+            </div>
           </div>
         ))}
       </section>

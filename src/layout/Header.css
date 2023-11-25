@@ -3,13 +3,13 @@ header {
   background-image: url("../assets/background-header.png");
   background-repeat: no-repeat;
   background-position: center;
-
+  border-bottom-right-radius: 50px;
+  border-bottom-left-radius: 50px;
+  box-shadow: 0px 2px #f95959;
+  width: 1100px;
   height: auto;
   padding: 45px;
-}
-
-.down-arrow {
-  width: 20px;
+  margin: auto;
 }
 
 .pokeball {
@@ -20,4 +20,8 @@ header {
 h1,
 h3 {
   margin: 10px;
+}
+
+h4 {
+  background-color: #f95959;
 }

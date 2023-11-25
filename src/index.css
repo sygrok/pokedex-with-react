@@ -2,15 +2,16 @@
 
 :root {
   font-family: "Pixelify Sans", sans-serif;
-
+  overflow-x: hidden;
   color-scheme: light dark;
-  color: rgba(255, 255, 255, 0.87);
+  color: #e3e3e3;
   background-color: #242424;
 }
 
 body {
   margin: 0;
   padding: 0;
+  background-color: #455d7a;
 }
 
 button {

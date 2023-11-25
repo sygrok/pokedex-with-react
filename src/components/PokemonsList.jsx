@@ -1,4 +1,17 @@
-import { Link, useNavigate } from "react-router-dom";
+import electric from "../assets/icons/electric.png";
+import fairy from "../assets/icons/fairy.png";
+import fighting from "../assets/icons/fighting.png";
+import fire from "../assets/icons/fire.png";
+import flying from "../assets/icons/flying.png";
+import ghost from "../assets/icons/ghost.png";
+import grass from "../assets/icons/grass.png";
+import poison from "../assets/icons/poison.png";
+import psyhic from "../assets/icons/psyhic.png";
+import rock from "../assets/icons/rock.png";
+import water from "../assets/icons/water.png";
+import all from "../assets/icons/all.png";
+
+import { useNavigate } from "react-router-dom";
 import PokemonListItem from "./PokemonsListItem";
 import { useCallback, useEffect, useState } from "react";
 import "./PokemonList.css";
@@ -25,6 +38,7 @@ export default function PokemonList() {
         name: data[key].name,
         img: data[key].img,
         category: data[key].category,
+        desc: data[key].desc,
       });
     }
     setPokemons(loadedData);
@@ -60,55 +74,112 @@ export default function PokemonList() {
     navigate("/new");
   };
 
+  const sideCategories = (
+    <section className="categories">
+      <ul>
+        <li className="a" onClick={() => filteredByCategory(null)}>
+          All
+        </li>
+        <li className="b" onClick={newHandler}>
+          +New
+        </li>
+        <li className="c" onClick={() => filteredByCategory("fire")}>
+          Fire
+        </li>
+        <li className="d" onClick={() => filteredByCategory("electric")}>
+          Electric
+        </li>
+        <li className="e" onClick={() => filteredByCategory("water")}>
+          Water
+        </li>
+        <li className="f" onClick={() => filteredByCategory("grass")}>
+          Grass
+        </li>
+        <li className="g" onClick={() => filteredByCategory("flying")}>
+          Flying
+        </li>
+        <li className="k" onClick={() => filteredByCategory("fairy")}>
+          Fairy
+        </li>
+        <li className="l" onClick={() => filteredByCategory("poison")}>
+          Poison
+        </li>
+        <li className="m" onClick={() => filteredByCategory("fighting")}>
+          Fighting
+        </li>
+        <li className="n" onClick={() => filteredByCategory("psychic")}>
+          Psychic
+        </li>
+        <li className="p" onClick={() => filteredByCategory("rock")}>
+          Rock
+        </li>
+        <li className="z" onClick={() => filteredByCategory("ghost")}>
+          Ghost
+        </li>
+      </ul>
+    </section>
+  );
+
+  const mainCategories = (
+    <section className="main-categories">
+      <ul>
+        <li className="aa" onClick={() => filteredByCategory(null)}>
+          <img src={all} />
+        </li>
+
+        <li className="cc" onClick={() => filteredByCategory("fire")}>
+          <img src={fire} />
+        </li>
+        <li className="dd" onClick={() => filteredByCategory("electric")}>
+          <img src={electric} />
+        </li>
+        <li className="ee" onClick={() => filteredByCategory("water")}>
+          <img src={water} />
+        </li>
+        <li className="ff" onClick={() => filteredByCategory("grass")}>
+          <img src={grass} />
+        </li>
+        <li className="gg" onClick={() => filteredByCategory("flying")}>
+          <img src={flying} />
+        </li>
+        <li className="kk" onClick={() => filteredByCategory("fairy")}>
+          <img src={fairy} />
+        </li>
+        <li className="ll" onClick={() => filteredByCategory("poison")}>
+          <img src={poison} />
+        </li>
+        <li className="mm" onClick={() => filteredByCategory("fighting")}>
+          <img src={fighting} />
+        </li>
+        <li className="nn" onClick={() => filteredByCategory("psychic")}>
+          <img src={psyhic} />
+        </li>
+        <li className="pp" onClick={() => filteredByCategory("rock")}>
+          <img src={rock} />
+        </li>
+        <li className="zz" onClick={() => filteredByCategory("ghost")}>
+          <img src={ghost} />
+        </li>
+      </ul>
+    </section>
+  );
+
   return (
     <>
-      <section className="categories">
-        <ul>
-          <li className="a" onClick={() => filteredByCategory(null)}>
-            All
-          </li>
-          <li className="b" onClick={newHandler}>
-            +New
-          </li>
-          <li className="c" onClick={() => filteredByCategory("fire")}>
-            Fire
-          </li>
-          <li className="d" onClick={() => filteredByCategory("electric")}>
-            Electric
-          </li>
-          <li className="e" onClick={() => filteredByCategory("water")}>
-            Water
-          </li>
-          <li className="f" onClick={() => filteredByCategory("grass")}>
-            Grass
-          </li>
-          <li className="g" onClick={() => filteredByCategory("flying")}>
-            Flying
-          </li>
-          <li className="k" onClick={() => filteredByCategory("fairy")}>
-            Fairy
-          </li>
-          <li className="l" onClick={() => filteredByCategory("poison")}>
-            Poison
-          </li>
-          <li className="m" onClick={() => filteredByCategory("fighting")}>
-            Fighting
-          </li>
-          <li className="n" onClick={() => filteredByCategory("psychic")}>
-            Psychic
-          </li>
-          <li className="p" onClick={() => filteredByCategory("rock")}>
-            Rock
-          </li>
-        </ul>
-      </section>
-      <div>
-        <input
-          type="text"
-          placeholder="Search Pokemon"
-          value={searchTerm}
-          onChange={(x) => setSearchTerm(x.target.value)}
-        />
+      {sideCategories}
+      <div className="filter-section">
+        <div className="filter-text">
+          <h1>Filter Pokemons!</h1>
+        </div>
+        <div className="filter-bottom">
+          <input
+            type="text"
+            placeholder="Search Pokemon"
+            value={searchTerm}
+            onChange={(x) => setSearchTerm(x.target.value)}
+          />
+          {mainCategories}
+        </div>
       </div>
       <PokemonListItem event={getFilteredPokemons()} />
     </>
