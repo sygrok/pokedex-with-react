@@ -51,7 +51,7 @@ export default function PokemonPage() {
       <h1>{selectedPokemon.name}</h1>
       <img src={selectedPokemon.img} alt={selectedPokemon.name} />
       <h4>Category: {selectedPokemon.category}</h4>
-      <h6>{selectedPokemon.desc}</h6>
+      <h6>{selectedPokemon.desc.substring()}</h6>
 
       <button onClick={handleDelete}>delete</button>
       <button onClick={navigateEdit}>edit</button>

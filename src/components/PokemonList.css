@@ -114,6 +114,9 @@
   padding: 20px;
   display: grid;
   grid-template-columns: 1fr;
+  border-bottom: 4px solid #f95959;
+
+  clip-path: polygon(0 0, 100% 0, 98% 100%, 2% 100%);
 }
 
 .filter-bottom {
@@ -133,6 +136,12 @@
     100% 100%,
     0% 100%
   );
+}
+
+hr {
+  width: 100%;
+  border: 3px solid #f95959;
+  margin: 0;
 }
 
 .main-categories {
@@ -160,8 +169,8 @@
   border-radius: 4px;
   font-size: 16px;
   background-color: white;
-  background-image: url("searchicon.png");
-  background-position: 10px 10px;
+  background-image: url("../assets/search.png");
+  background-size: 10%;
   background-repeat: no-repeat;
   padding: 12px 20px 12px 40px;
   height: 50px;

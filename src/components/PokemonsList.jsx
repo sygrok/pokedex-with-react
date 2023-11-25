@@ -171,6 +171,8 @@ export default function PokemonList() {
         <div className="filter-text">
           <h1>Filter Pokemons!</h1>
         </div>
+        <hr />
+
         <div className="filter-bottom">
           <input
             type="text"

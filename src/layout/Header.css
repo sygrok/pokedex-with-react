@@ -6,10 +6,10 @@ header {
   border-bottom-right-radius: 50px;
   border-bottom-left-radius: 50px;
   box-shadow: 0px 2px #f95959;
-  width: 1100px;
   height: auto;
   padding: 45px;
   margin: auto;
+  font-size: larger;
 }
 
 .pokeball {

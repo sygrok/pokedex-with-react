@@ -14,6 +14,7 @@ section {
   width: 200px !important;
   text-align: center;
   background-color: #233142;
+  border-bottom: 4px solid #f95959;
 }
 
 h4 {
