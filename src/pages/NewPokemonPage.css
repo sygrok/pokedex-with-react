@@ -1,26 +1,80 @@
-.control {
-  margin: 1rem 0;
+.new-section-order {
+  display: flex;
 }
 
-.control label {
-  display: block;
-  font-weight: bold;
-  margin-bottom: 0.5rem;
-  text-align: left;
+.pokebox-new {
+  width: 350px !important;
+  background-color: #233142;
+  border: 10px solid #f95959;
+  text-align: center;
+  border-radius: 35px;
+  grid-template-columns: 1fr 1fr;
+  display: grid;
+  margin: 50px 3px 50px auto;
 }
 
-.control input,
-.control textarea {
-  display: block;
-  width: 100%;
-  font: inherit;
-  padding: 0.2rem;
-  border-radius: 12px;
-  border: 1px solid #ccc;
+.pokebox-new img {
+  width: 350px;
+  height: 350px;
 }
 
-.control input:focus,
-.control textarea:focus {
-  outline: none;
-  border-color: #230052;
+.pokebox-new h2 {
+  background-color: #f95959;
+  text-transform: capitalize;
+}
+
+.pokebox-new h1 {
+  font-size: xx-large;
+  background-color: #455d7a;
+  margin: 0;
+  border-radius: 20px 20px 0 0;
+}
+
+.pokebox-new p {
+  font-size: larger;
+  width: 350px;
+  overflow: hidden;
+}
+
+/**/
+
+.newbox {
+  width: 250px;
+  margin: 50px auto 50px 3px;
+
+  background-color: #233142;
+  border: 10px solid #f95959;
+  border-radius: 35px;
+  padding: 20px;
+}
+
+.newbox form {
+  display: flex;
+  flex-direction: column;
+  font-size: x-large;
+  text-align: center;
+}
+
+.newbox form input,
+textarea,
+select {
+  margin-bottom: 25px;
+  font-size: large;
+}
+
+.newbox form label {
+  margin: 10px;
+  border-bottom: 1px solid #f95959;
+}
+
+.newbox form textarea {
+  height: 50px;
+}
+
+.newbox button {
+  background-color: #f95959;
+  color: #e3e3e3;
+  font-size: large;
+  width: 185px;
+  margin: auto;
 }

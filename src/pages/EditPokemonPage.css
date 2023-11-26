@@ -15,6 +15,7 @@
 
 .pokebox-edit img {
   width: 350px;
+  height: 350px;
 }
 
 .pokebox-edit h2 {
@@ -26,11 +27,12 @@
   font-size: xx-large;
   background-color: #455d7a;
   margin: 0;
-  border-radius: 50px;
+  border-radius: 20px 20px 0 0;
 }
 
 .pokebox-edit p {
   font-size: larger;
+  overflow-wrap: break-word;
 }
 
 /**/

@@ -36,7 +36,7 @@
   font-size: xx-large;
   background-color: #455d7a;
   margin: 0;
-  border-radius: 50px;
+  border-radius: 20px 20px 0 0;
 }
 
 .pokebox p {

@@ -1,11 +1,11 @@
-import { useRef } from "react";
+import { useState } from "react";
 import "./NewPokemonPage.css";
 
 export default function NewPokemonPage() {
-  const nameRef = useRef("");
-  const descRef = useRef("");
-  const imgRef = useRef("");
-  const categoryRef = useRef("");
+  const [name, setName] = useState("");
+  const [desc, setDesc] = useState("");
+  const [img, setImg] = useState("");
+  const [category, setCategory] = useState("");
 
   async function addPokemonHandler(data) {
     const response = await fetch(
@@ -19,39 +19,80 @@ export default function NewPokemonPage() {
     await response.json();
   }
 
-  const submitHandler = (event) => {
+  const submitHandler = async (event) => {
     event.preventDefault();
 
     const pokemon = {
-      name: nameRef.current.value,
-      desc: descRef.current.value,
-      category: categoryRef.current.value,
-      img: imgRef.current.value,
+      name,
+      desc,
+      category,
+      img,
     };
 
     addPokemonHandler(pokemon);
+
+    setName("");
+    setDesc("");
+    setImg("");
+    setCategory("");
   };
+
   return (
     <>
-      <form onSubmit={submitHandler}>
-        <div className="control">
-          <label htmlFor="name">Name</label>
-          <input type="text" id="name" ref={nameRef} />
+      <section className="new-section-order">
+        <div className="pokebox-new">
+          <div>
+            <h1>{name}</h1>
+            <img src={img} />
+            <h2>{category}</h2>
+            <p>{desc.substring()}</p>
+          </div>
         </div>
-        <div className="control">
-          <label htmlFor="Description">Description</label>
-          <textarea rows="5" id="Description" ref={descRef}></textarea>
+        <div className="newbox">
+          <form onSubmit={submitHandler}>
+            <label htmlFor="name">Name</label>
+            <input
+              type="text"
+              id="name"
+              maxlength="15"
+              value={name}
+              onChange={(x) => setName(x.target.value)}
+            />
+            <label htmlFor="Description">Description</label>
+            <textarea
+              rows="5"
+              id="Description"
+              value={desc}
+              onChange={(x) => setDesc(x.target.value)}
+            ></textarea>
+            <label htmlFor="img">Image</label>
+            <input
+              type="text"
+              id="img"
+              value={img}
+              onChange={(x) => setImg(x.target.value)}
+            />
+            <label htmlFor="category">Category</label>
+            <select
+              name="category"
+              onChange={(x) => setCategory(x.target.value)}
+            >
+              <option>fire</option>
+              <option>electric</option>
+              <option>water</option>
+              <option>grass</option>
+              <option>flying</option>
+              <option>fairy</option>
+              <option>poison</option>
+              <option>fighting</option>
+              <option>psychic</option>
+              <option>rock</option>
+              <option>ghost</option>
+            </select>
+            <button>Add Pokemon</button>
+          </form>
         </div>
-        <div className="control">
-          <label htmlFor="img">Image</label>
-          <input type="text" id="img" ref={imgRef} />
-        </div>
-        <div className="control">
-          <label htmlFor="category">Category</label>
-          <input type="text" id="category" ref={categoryRef} />
-        </div>
-        <button>Add Pokemon</button>
-      </form>
+      </section>
     </>
   );
 }
