@@ -14,7 +14,7 @@ export default function PokemonListItem({ event }) {
 
   return (
     <>
-      <section>
+      <section className="cards-section">
         {event.map((x) => (
           <div className="card" key={x.id}>
             <h4>{x.name}</h4>
@@ -30,7 +30,7 @@ export default function PokemonListItem({ event }) {
                     navigateDetails(x.id);
                   }}
                 >
-                  Details
+                  &#10140;
                 </button>
               </div>
             </div>

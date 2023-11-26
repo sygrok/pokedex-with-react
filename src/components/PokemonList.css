@@ -176,3 +176,14 @@ hr {
   height: 50px;
   margin: auto;
 }
+
+.hContent {
+  text-align: center;
+  margin-bottom: 55px;
+  background-color: #f95959;
+  padding: 20px;
+  border: 3px solid #233142;
+  text-decoration: underline #233142;
+  text-transform: uppercase;
+  border-radius: 80px;
+}

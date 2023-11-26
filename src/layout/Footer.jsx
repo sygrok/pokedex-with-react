@@ -51,7 +51,7 @@ function Footer() {
       </div>
       <div>
         <p>
-          This Website is created by <span>Berkay Anduv</span> for training
+          This Website was created by <span>Berkay Anduv</span> for training
           purposes.
         </p>
       </div>

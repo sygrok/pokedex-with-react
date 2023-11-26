@@ -74,6 +74,12 @@ export default function PokemonList() {
     navigate("/new");
   };
 
+  let hContent = selectedCategory;
+
+  if (hContent === null) {
+    hContent = "All Pokemons";
+  }
+
   const sideCategories = (
     <section className="categories">
       <ul>
@@ -183,6 +189,7 @@ export default function PokemonList() {
           {mainCategories}
         </div>
       </div>
+      <h1 className="hContent">{hContent}</h1>
       <PokemonListItem event={getFilteredPokemons()} />
     </>
   );

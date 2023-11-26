@@ -1,3 +1,4 @@
+import "./PokemonPage.css";
 import React, { useEffect, useState } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 
@@ -48,13 +49,15 @@ export default function PokemonPage() {
 
   return (
     <>
-      <h1>{selectedPokemon.name}</h1>
-      <img src={selectedPokemon.img} alt={selectedPokemon.name} />
-      <h4>Category: {selectedPokemon.category}</h4>
-      <h6>{selectedPokemon.desc.substring()}</h6>
+      <section className="pokebox">
+        <h1>{selectedPokemon.name}</h1>
+        <img src={selectedPokemon.img} alt={selectedPokemon.name} />
+        <h2>{selectedPokemon.category}</h2>
+        <p>{selectedPokemon.desc.substring()}</p>
 
-      <button onClick={handleDelete}>delete</button>
-      <button onClick={navigateEdit}>edit</button>
+        <button onClick={handleDelete}>delete</button>
+        <button onClick={navigateEdit}>edit</button>
+      </section>
     </>
   );
 }

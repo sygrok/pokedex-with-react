@@ -1,4 +1,4 @@
-section {
+.cards-section {
   display: grid;
   margin: auto;
   grid-template-columns: repeat(auto-fit, minmax(200px, 1fr));
@@ -17,11 +17,12 @@ section {
   border-bottom: 4px solid #f95959;
 }
 
-h4 {
+.card h4 {
   border-radius: 15px 0 0px 0;
+  font-size: larger;
 }
 
-img {
+.card img {
   width: 150px;
 }
 
@@ -52,5 +53,6 @@ img {
   margin: 0 5px 5px 0;
   border: none;
   border-radius: 5px;
-  font-size: medium;
+  font-size: larger;
+  padding: 5px 15px;
 }

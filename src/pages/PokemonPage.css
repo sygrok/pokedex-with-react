@@ -1,0 +1,27 @@
+.pokebox {
+  width: 350px;
+  margin: 50px auto;
+  background-color: #233142;
+  border: 10px solid #f95959;
+  text-align: center;
+  border-radius: 35px;
+}
+
+.pokebox img {
+  width: 350px;
+}
+
+.pokebox h2 {
+  background-color: #f95959;
+}
+
+.pokebox h1 {
+  font-size: xx-large;
+  background-color: #455d7a;
+  margin: 0;
+  border-radius: 50px;
+}
+
+.pokebox p {
+  font-size: larger;
+}
