@@ -1,10 +1,13 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditPokemonPage.css";
+import loadingIcon from "../assets/loading.gif";
 
 export default function EdipPokemon() {
   const navigate = useNavigate();
   const { id } = useParams();
+  const [loading, setLoading] = useState(true);
+
   const [editedPokemon, setEditedPokemon] = useState({
     name: "",
     img: "",
@@ -19,6 +22,8 @@ export default function EdipPokemon() {
       );
 
       const data = await response.json();
+      setLoading(false);
+
       setEditedPokemon(data);
     };
 
@@ -54,65 +59,81 @@ export default function EdipPokemon() {
 
   return (
     <>
-      <section className="edit-section-order">
-        <div className="pokebox-edit">
-          <div>
-            <h1>{editedPokemon.name}</h1>
-            <img src={editedPokemon.img} alt={editedPokemon.name} />
-            <h2>{editedPokemon.category}</h2>
-            <p>{editedPokemon.desc.substring()}</p>
+      {loading ? (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "150px 0",
+          }}
+        >
+          <img
+            style={{ width: "250px", borderRadius: "150px" }}
+            src={loadingIcon}
+          />
+        </div>
+      ) : (
+        <section className="edit-section-order">
+          <div className="pokebox-edit">
+            <div>
+              <h1>{editedPokemon.name}</h1>
+              <img src={editedPokemon.img} alt={editedPokemon.name} />
+              <h2>{editedPokemon.category}</h2>
+              <p>{editedPokemon.desc.substring()}</p>
+            </div>
           </div>
-        </div>
-        <div className="editbox">
-          <form onSubmit={handleSubmit}>
-            <label>Name</label>
+          <div className="editbox">
+            <form onSubmit={handleSubmit}>
+              <label>Name</label>
 
-            <input
-              type="text"
-              name="name"
-              value={editedPokemon.name}
-              onChange={handleChange}
-            />
-            <label>Image</label>
-            <input
-              type="text"
-              name="img"
-              value={editedPokemon.img}
-              onChange={handleChange}
-            />
+              <input
+                type="text"
+                name="name"
+                value={editedPokemon.name}
+                onChange={handleChange}
+              />
+              <label>Image</label>
+              <input
+                type="text"
+                name="img"
+                value={editedPokemon.img}
+                onChange={handleChange}
+              />
 
-            <label>Category</label>
+              <label>Category</label>
 
-            <select
-              name="category"
-              value={editedPokemon.category}
-              onChange={handleChange}
-            >
-              <option>fire</option>
-              <option>electric</option>
-              <option>water</option>
-              <option>grass</option>
-              <option>flying</option>
-              <option>fairy</option>
-              <option>poison</option>
-              <option>fighting</option>
-              <option>psychic</option>
-              <option>rock</option>
-              <option>ghost</option>
-            </select>
+              <select
+                name="category"
+                value={editedPokemon.category}
+                onChange={handleChange}
+              >
+                <option>fire</option>
+                <option>electric</option>
+                <option>water</option>
+                <option>grass</option>
+                <option>flying</option>
+                <option>fairy</option>
+                <option>poison</option>
+                <option>fighting</option>
+                <option>psychic</option>
+                <option>rock</option>
+                <option>ghost</option>
+              </select>
 
-            <label>Description</label>
+              <label>Description</label>
 
-            <textarea
-              name="desc"
-              value={editedPokemon.desc}
-              onChange={handleChange}
-            />
+              <textarea
+                name="desc"
+                value={editedPokemon.desc}
+                onChange={handleChange}
+              />
 
-            <button type="submit">Save Changes</button>
-          </form>
-        </div>
-      </section>
+              <button type="submit">Save Changes</button>
+            </form>
+          </div>
+        </section>
+      )}
     </>
   );
 }

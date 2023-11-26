@@ -10,6 +10,7 @@ import psyhic from "../assets/icons/psyhic.png";
 import rock from "../assets/icons/rock.png";
 import water from "../assets/icons/water.png";
 import all from "../assets/icons/all.png";
+import loadingIcon from "../assets/loading.gif";
 
 import { useNavigate } from "react-router-dom";
 import PokemonListItem from "./PokemonsListItem";
@@ -21,6 +22,7 @@ export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
   const [selectedCategory, setSelectedCategory] = useState(null);
   const [searchTerm, setSearchTerm] = useState("");
+  const [loading, setLoading] = useState(true);
   const navigate = useNavigate();
 
   //fetch data
@@ -43,11 +45,12 @@ export default function PokemonList() {
       });
     }
     setPokemons(loadedData);
+    setLoading(false);
   }, []);
 
   useEffect(() => {
     fetchData();
-  }, [fetchData]);
+  }, [fetchData, setLoading]);
 
   //Filter by category or search term
   const filteredByCategory = (x) => {
@@ -204,6 +207,21 @@ export default function PokemonList() {
         </div>
       </div>
       <h1 className="hContent">{hContent}</h1>
+      {loading && (
+        <div
+          style={{
+            display: "flex",
+            justifyContent: "center",
+            alignItems: "center",
+            margin: "150px 0",
+          }}
+        >
+          <img
+            style={{ width: "250px", borderRadius: "150px" }}
+            src={loadingIcon}
+          />
+        </div>
+      )}
       <PokemonListItem event={getFilteredPokemons()} />
     </>
   );
