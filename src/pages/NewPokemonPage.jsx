@@ -56,6 +56,7 @@ export default function NewPokemonPage() {
               id="name"
               maxlength="15"
               value={name}
+              required
               onChange={(x) => setName(x.target.value)}
             />
             <label htmlFor="Description">Description</label>
@@ -63,12 +64,14 @@ export default function NewPokemonPage() {
               rows="5"
               id="Description"
               value={desc}
+              required
               onChange={(x) => setDesc(x.target.value)}
             ></textarea>
             <label htmlFor="img">Image</label>
             <input
               type="text"
               id="img"
+              required
               value={img}
               onChange={(x) => setImg(x.target.value)}
             />
@@ -76,7 +79,11 @@ export default function NewPokemonPage() {
             <select
               name="category"
               onChange={(x) => setCategory(x.target.value)}
+              required
             >
+              <option value="" selected disabled hidden>
+                Select
+              </option>
               <option>fire</option>
               <option>electric</option>
               <option>water</option>

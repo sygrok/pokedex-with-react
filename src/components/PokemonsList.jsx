@@ -15,6 +15,7 @@ import { useNavigate } from "react-router-dom";
 import PokemonListItem from "./PokemonsListItem";
 import { useCallback, useEffect, useState } from "react";
 import "./PokemonList.css";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
@@ -80,8 +81,21 @@ export default function PokemonList() {
     hContent = "All Pokemons";
   }
 
+  const { scrollY } = useScroll();
+
+  const sideOpacity = useTransform(
+    scrollY,
+    [550, 650, 700, 750, 800],
+    [0, 0.25, 0.5, 0.75, 1]
+  );
+
+  const sidePosition = useTransform(scrollY, [550, 650, 700], [-150, -100, 0]);
+
   const sideCategories = (
-    <section className="categories">
+    <motion.section
+      className="categories"
+      style={{ opacity: sideOpacity, left: sidePosition }}
+    >
       <ul>
         <li className="a" onClick={() => filteredByCategory(null)}>
           All
@@ -123,7 +137,7 @@ export default function PokemonList() {
           Ghost
         </li>
       </ul>
-    </section>
+    </motion.section>
   );
 
   const mainCategories = (
