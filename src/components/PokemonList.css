@@ -168,6 +168,7 @@ hr {
   border: 2px solid #ccc;
   border-radius: 4px;
   font-size: 16px;
+  color: #233142;
   background-color: white;
   background-image: url("../assets/search.png");
   background-size: 10%;
@@ -175,15 +176,18 @@ hr {
   padding: 12px 20px 12px 40px;
   height: 50px;
   margin: auto;
+  font-family: "Pixelify Sans", sans-serif;
 }
 
 .hContent {
+  font-size: x-large;
   text-align: center;
-  margin-bottom: 55px;
+  margin: 0 auto 45px auto;
   background-color: #f95959;
-  padding: 20px;
+  padding: 10px;
   border: 3px solid #233142;
   text-decoration: underline #233142;
   text-transform: uppercase;
   border-radius: 80px;
+  width: 350px;
 }
