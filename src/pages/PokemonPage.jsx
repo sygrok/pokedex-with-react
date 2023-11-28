@@ -5,6 +5,7 @@ import homeArrow from "../assets/home-arrow.png";
 import deleteIcon from "../assets/delete-icon.png";
 import editIcon from "../assets/edit-icon.png";
 import loadingIcon from "../assets/loading.gif";
+import { motion } from "framer-motion";
 
 export default function PokemonPage() {
   const { id } = useParams();
@@ -68,12 +69,12 @@ export default function PokemonPage() {
         </div>
       ) : (
         <section className="orderbox">
-          <div className="back">
+          <motion.div whileHover={{ paddingRight: 5 }} className="back">
             <Link style={{ textDecoration: "none", color: "#e3e3e3" }} to="/">
               <img src={homeArrow} />
               <p>Go Home</p>
             </Link>
-          </div>
+          </motion.div>
           <div className="pokebox">
             <div>
               <h1>{selectedPokemon?.name}</h1>
@@ -82,10 +83,14 @@ export default function PokemonPage() {
               <p>{selectedPokemon?.desc.substring()}</p>
               <div className="pokebox-buttons">
                 <div onClick={handleDelete}>
-                  <img src={deleteIcon} />
+                  <motion.img whileHover={{ scale: 1.1 }} src={deleteIcon} />
                 </div>
                 <div onClick={navigateEdit}>
-                  <img className="edit" src={editIcon} />
+                  <motion.img
+                    whileHover={{ scale: 1.1 }}
+                    className="edit"
+                    src={editIcon}
+                  />
                 </div>
               </div>
             </div>
