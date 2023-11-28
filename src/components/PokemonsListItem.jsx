@@ -1,4 +1,5 @@
 import { useNavigate } from "react-router-dom";
+import { motion } from "framer-motion";
 import "./PokemonsListItem.css";
 
 export default function PokemonListItem({ event }) {
@@ -25,13 +26,19 @@ export default function PokemonListItem({ event }) {
 
               <div className="card-bottom">
                 <p>{capitalize(x.category)}</p>
-                <button
+                <motion.button
+                  whileHover={{ scale: 1.1, backgroundColor: "#f95959" }}
+                  transition={{
+                    type: "spring",
+                    stiffness: 260,
+                    damping: 20,
+                  }}
                   onClick={() => {
                     navigateDetails(x.id);
                   }}
                 >
                   &#10140;
-                </button>
+                </motion.button>
               </div>
             </div>
           </div>

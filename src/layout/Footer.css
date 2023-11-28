@@ -42,3 +42,9 @@ footer img {
 footer span {
   color: #f95959;
 }
+
+footer hr {
+  width: 10px;
+  color: #f95959;
+  margin: auto;
+}
