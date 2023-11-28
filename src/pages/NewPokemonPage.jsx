@@ -2,6 +2,7 @@ import { useState } from "react";
 import "./NewPokemonPage.css";
 import { motion } from "framer-motion";
 import { useNavigate } from "react-router-dom";
+import toast from "react-hot-toast";
 export default function NewPokemonPage() {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
@@ -102,7 +103,11 @@ export default function NewPokemonPage() {
                 Back
               </motion.button>
 
-              <motion.button type="submit" whileHover={{ color: "#f95959" }}>
+              <motion.button
+                onClick={() => toast.success("Pokemon added.")}
+                type="submit"
+                whileHover={{ color: "#f95959" }}
+              >
                 Add
               </motion.button>
             </div>

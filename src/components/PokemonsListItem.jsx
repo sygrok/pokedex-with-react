@@ -17,7 +17,7 @@ export default function PokemonListItem({ event }) {
     <>
       <section className="cards-section">
         {event.map((x) => (
-          <div className="card" key={x.id}>
+          <motion.div whileHover={{ scale: 1.1 }} className="card" key={x.id}>
             <h4>{x.name}</h4>
             <img src={x.img} />
 
@@ -41,7 +41,7 @@ export default function PokemonListItem({ event }) {
                 </motion.button>
               </div>
             </div>
-          </div>
+          </motion.div>
         ))}
       </section>
     </>

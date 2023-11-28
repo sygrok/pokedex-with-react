@@ -6,6 +6,7 @@ import deleteIcon from "../assets/delete-icon.png";
 import editIcon from "../assets/edit-icon.png";
 import loadingIcon from "../assets/loading.gif";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function PokemonPage() {
   const { id } = useParams();
@@ -46,6 +47,7 @@ export default function PokemonPage() {
     );
 
     if (response.ok) {
+      toast.error("Pokemon deleted.");
       navigate("/");
     }
   };

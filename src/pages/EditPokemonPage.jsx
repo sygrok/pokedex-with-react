@@ -3,6 +3,7 @@ import { useNavigate, useParams } from "react-router-dom";
 import "./EditPokemonPage.css";
 import loadingIcon from "../assets/loading.gif";
 import { motion } from "framer-motion";
+import toast from "react-hot-toast";
 
 export default function EdipPokemon() {
   const navigate = useNavigate();
@@ -137,7 +138,11 @@ export default function EdipPokemon() {
                   Back
                 </motion.button>
 
-                <motion.button whileHover={{ color: "#f95959" }} type="submit">
+                <motion.button
+                  onClick={() => toast.success("Pokemon edited.")}
+                  whileHover={{ color: "#f95959" }}
+                  type="submit"
+                >
                   Save
                 </motion.button>
               </div>
