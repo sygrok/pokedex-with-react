@@ -80,7 +80,11 @@ export default function EdipPokemon() {
           <div className="pokebox-edit">
             <div>
               <h1>{editedPokemon.name}</h1>
-              <img src={editedPokemon.img} alt={editedPokemon.name} />
+              <img
+                className="pokeedit-img"
+                src={editedPokemon.img}
+                alt={editedPokemon.name}
+              />
               <h2>{editedPokemon.category}</h2>
               <p>{editedPokemon.desc.substring()}</p>
             </div>

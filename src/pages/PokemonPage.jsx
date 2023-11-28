@@ -80,7 +80,7 @@ export default function PokemonPage() {
           <div className="pokebox">
             <div>
               <h1>{selectedPokemon?.name}</h1>
-              <img src={selectedPokemon?.img} />
+              <img className="pokedetail-img" src={selectedPokemon?.img} />
               <h2>{selectedPokemon?.category}</h2>
               <p>{selectedPokemon?.desc.substring()}</p>
               <div className="pokebox-buttons">
@@ -97,7 +97,12 @@ export default function PokemonPage() {
               </div>
             </div>
           </div>
-          <div></div>
+          <motion.div whileHover={{ paddingRight: 5 }} className="back-small">
+            <Link style={{ textDecoration: "none", color: "#e3e3e3" }} to="/">
+              <img src={homeArrow} />
+              <p>Go Home</p>
+            </Link>
+          </motion.div>
         </section>
       )}
     </>

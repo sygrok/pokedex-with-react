@@ -48,3 +48,57 @@ footer hr {
   color: #f95959;
   margin: auto;
 }
+
+@media screen and (max-width: 1024px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    width: 100%;
+    background-color: #233142;
+    text-align: center;
+    font-size: medium;
+  }
+
+  .footer h1 {
+    font-size: large;
+  }
+}
+
+@media screen and (max-width: 500px) {
+  .footer {
+    display: grid;
+    grid-template-columns: 1fr;
+    margin: auto;
+    width: 100%;
+    background-color: #233142;
+    text-align: center;
+    font-size: medium;
+  }
+  .footer div {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .footer ul {
+    margin: 0;
+  }
+
+  .div-img,
+  .div-img img {
+    visibility: hidden;
+    margin: 0;
+    padding: 0;
+    width: 0;
+    height: 0;
+  }
+
+  .footer ul {
+    border-right: none;
+    padding: 0;
+  }
+
+  .footer p {
+    padding: 10px;
+  }
+}

@@ -66,7 +66,7 @@ function Footer() {
             </motion.li>
           </ul>
         </div>
-        <div className="3">
+        <div className="div-img">
           <Link to="/">
             <motion.img
               whileHover={{ scale: 1.1, rotate: 34 }}

@@ -5,6 +5,7 @@ import "./PokemonList.css";
 import MainCategories from "./MainCategories";
 import SideCategories from "./SideCategories";
 import { motion } from "framer-motion";
+import { Link } from "react-router-dom";
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
@@ -96,6 +97,18 @@ export default function PokemonList() {
         </div>
       </div>
       <h1 className="hContent">{hContent}</h1>
+      <motion.div whileHover={{ scale: 1.1 }} className="newplus">
+        <Link
+          to="/new"
+          style={{
+            textDecoration: "none",
+            color: "white",
+            fontSize: "x-large",
+          }}
+        >
+          +ADD
+        </Link>
+      </motion.div>
       {loading && (
         <div
           style={{

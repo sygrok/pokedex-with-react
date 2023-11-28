@@ -86,3 +86,47 @@ select {
   display: flex;
   gap: 5px;
 }
+
+@media screen and (max-width: 500px) {
+  .pokebox-edit {
+    width: 350px;
+    margin: 50px auto 0 auto;
+    display: block;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+
+  .pokebox-edit img {
+    width: 250px;
+    height: 250px;
+  }
+
+  .pokebox-edit h2 {
+    background-color: #f95959;
+    text-transform: capitalize;
+    font-size: 20px;
+  }
+
+  .pokebox-edit h1 {
+    font-size: x-large;
+    background-color: #455d7a;
+    margin: 0;
+    border-radius: 20px 20px 0 0;
+  }
+
+  .pokebox-edit p {
+    font-size: large;
+  }
+
+  .edit-section-order {
+    display: grid;
+    grid-template-columns: 1fr;
+  }
+
+  .editbox {
+    width: 310px;
+    margin: 0 auto 50px auto;
+    border-top-right-radius: 0;
+    border-top-left-radius: 0;
+  }
+}

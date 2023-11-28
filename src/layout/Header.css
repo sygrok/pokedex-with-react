@@ -25,3 +25,19 @@ h3 {
 h4 {
   background-color: #f95959;
 }
+
+@media screen and (max-width: 1024px) {
+  header {
+    text-align: center;
+    background-image: url("../assets/background-header.png");
+    background-repeat: no-repeat;
+    background-position: center;
+    border-bottom-right-radius: 00px;
+    border-bottom-left-radius: 00px;
+    box-shadow: 0px 2px #f95959;
+    height: auto;
+    padding: 5px;
+    margin: auto;
+    font-size: larger;
+  }
+}
