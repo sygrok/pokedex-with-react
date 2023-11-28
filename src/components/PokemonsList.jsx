@@ -1,10 +1,10 @@
 import loadingIcon from "../assets/loading.gif";
-import { useNavigate } from "react-router-dom";
 import PokemonListItem from "./PokemonsListItem";
 import { useCallback, useEffect, useState } from "react";
 import "./PokemonList.css";
 import MainCategories from "./MainCategories";
 import SideCategories from "./SideCategories";
+import { motion } from "framer-motion";
 
 export default function PokemonList() {
   const [pokemons, setPokemons] = useState([]);
@@ -85,7 +85,8 @@ export default function PokemonList() {
         <hr />
 
         <div className="filter-bottom">
-          <input
+          <motion.input
+            whileFocus={{ scale: 1.02 }}
             type="text"
             placeholder="Search Pokemon"
             value={searchTerm}

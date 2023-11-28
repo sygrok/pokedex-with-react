@@ -1,3 +1,5 @@
+@import url("https://fonts.googleapis.com/css2?family=Pixelify+Sans&family=Roboto:ital,wght@0,500;1,900&display=swap");
+
 .edit-section-order {
   display: flex;
 }
@@ -71,9 +73,16 @@ select {
 }
 
 .editbox button {
-  background-color: #f95959;
+  background-color: #455d7a;
   color: #e3e3e3;
   font-size: large;
   width: 185px;
   margin: auto;
+  font-family: "Pixelify Sans", sans-serif;
+  border: none;
+}
+
+.buttonbox {
+  display: flex;
+  gap: 5px;
 }

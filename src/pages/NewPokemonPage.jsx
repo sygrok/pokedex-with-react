@@ -1,11 +1,13 @@
 import { useState } from "react";
 import "./NewPokemonPage.css";
-
+import { motion } from "framer-motion";
+import { useNavigate } from "react-router-dom";
 export default function NewPokemonPage() {
   const [name, setName] = useState("");
   const [desc, setDesc] = useState("");
   const [img, setImg] = useState("");
   const [category, setCategory] = useState("");
+  const navigate = useNavigate();
 
   async function addPokemonHandler(data) {
     const response = await fetch(
@@ -56,7 +58,6 @@ export default function NewPokemonPage() {
               id="name"
               maxlength="15"
               value={name}
-              required
               onChange={(x) => setName(x.target.value)}
             />
             <label htmlFor="Description">Description</label>
@@ -64,14 +65,12 @@ export default function NewPokemonPage() {
               rows="5"
               id="Description"
               value={desc}
-              required
               onChange={(x) => setDesc(x.target.value)}
             ></textarea>
             <label htmlFor="img">Image</label>
             <input
               type="text"
               id="img"
-              required
               value={img}
               onChange={(x) => setImg(x.target.value)}
             />
@@ -79,7 +78,6 @@ export default function NewPokemonPage() {
             <select
               name="category"
               onChange={(x) => setCategory(x.target.value)}
-              required
             >
               <option value="" selected disabled hidden>
                 Select
@@ -96,7 +94,18 @@ export default function NewPokemonPage() {
               <option>rock</option>
               <option>ghost</option>
             </select>
-            <button>Add Pokemon</button>
+            <div className="buttonbox-new">
+              <motion.button
+                whileHover={{ color: "#f95959" }}
+                onClick={() => navigate("/")}
+              >
+                Back
+              </motion.button>
+
+              <motion.button type="submit" whileHover={{ color: "#f95959" }}>
+                Add
+              </motion.button>
+            </div>
           </form>
         </div>
       </section>

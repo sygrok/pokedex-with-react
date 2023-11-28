@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import { useNavigate, useParams } from "react-router-dom";
 import "./EditPokemonPage.css";
 import loadingIcon from "../assets/loading.gif";
+import { motion } from "framer-motion";
 
 export default function EdipPokemon() {
   const navigate = useNavigate();
@@ -128,8 +129,18 @@ export default function EdipPokemon() {
                 value={editedPokemon.desc}
                 onChange={handleChange}
               />
+              <div className="buttonbox">
+                <motion.button
+                  whileHover={{ color: "#f95959" }}
+                  onClick={() => navigate(`/${id}`)}
+                >
+                  Back
+                </motion.button>
 
-              <button type="submit">Save Changes</button>
+                <motion.button whileHover={{ color: "#f95959" }} type="submit">
+                  Save
+                </motion.button>
+              </div>
             </form>
           </div>
         </section>
